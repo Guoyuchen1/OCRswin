@@ -200,6 +200,8 @@ def main():
                                           use_checkpoint=False)
     num_classes = len(alphabet) + 2
     decoder = Seqdecoder.Decoder(256, output_size=num_classes, dropout_p=0.1, max_length=49)
+    print(str(encoder))
+    print(str(decoder))
     image = torch.FloatTensor(32, 3, 224, 224)
     text = torch.LongTensor(32)
     criterion = torch.nn.NLLLoss()
